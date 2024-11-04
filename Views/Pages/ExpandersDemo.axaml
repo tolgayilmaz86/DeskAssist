@@ -1,0 +1,314 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+      xmlns:controls="clr-namespace:Avalonia.Themes.Neumorphism.Controls;assembly=Avalonia.Themes.Neumorphism"
+      xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+      xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+      xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+      xmlns:viewModels="clr-namespace:DeskAssist.ViewModels"
+      x:CompileBindings="True"
+      x:DataType="viewModels:ExpandersDemoViewModel"
+      x:Class="DeskAssist.Pages.ExpandersDemo">
+
+
+
+	<StackPanel Margin="20">
+		<TextBlock Classes="Headline4 Subheadline" Text="Expanders" Foreground="{DynamicResource MaterialDesignDarkGray}" />
+
+		<TextBlock Classes="Headline6 Subheadline2" Text="Vertical expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
+		<StackPanel Orientation="Horizontal" MinHeight="220">
+
+      <StackPanel Orientation="Vertical">
+			<!--****************************************************************-->
+			<showMeTheXaml:XamlDisplay UniqueId="HExpander1" Margin="5" Padding="0">
+        <Expander Width="300" ExpandDirection="Down"
+                  ToolTip.Tip='Regular down side expander with default theme applied'
+                  assist:ExpanderAssist.ExpanderHeight="34">
+          <Expander.Header>
+            Expand me
+          </Expander.Header>
+          <Expander.Styles>
+            <Style Selector="Expander:down /template/ ToggleButton#ExpanderHeader">
+              <Setter Property="Content" Value="Expand me"/>
+            </Style>
+            <Style Selector="Expander:down:expanded /template/ ToggleButton#ExpanderHeader">
+              <Setter Property="Content" Value="Collapse me"/>
+            </Style>
+          </Expander.Styles>
+          <ScrollViewer Height="104" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+			</showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="HExpander2" Margin="5" Padding="0">
+        <Expander Width="300" ExpandDirection="Up" CornerRadius="20"
+                  ToolTip.Tip='Regular up side expander with default theme applied'
+                  assist:ExpanderAssist.ExpanderHeight="40">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <icons:MaterialIcon Grid.Column="0" Kind="UserAccessControl" Width="24" Height="24" Foreground="Gray"/>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Height="104" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay> 
+      <!--****************************************************************-->
+      </StackPanel>
+
+      <StackPanel Orientation="Vertical">
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="HExpander3" Margin="5" Padding="0">
+          <Expander Width="240" Theme="{StaticResource ExpanderCircle}"
+                    ToolTip.Tip='Down side circle expander with theme "ExpanderCircle" applied'
+                    Margin="0" ExpandDirection="Down"
+                    assist:ExpanderAssist.ExpanderHeight="38">
+            <Expander.Header>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </Expander.Header>
+            <ScrollViewer Height="104" Padding="0,0,10,0">
+              <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            </ScrollViewer>
+          </Expander>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="HExpander4" Margin="5" Padding="0">
+          <Expander Width="240" Theme="{StaticResource ExpanderCircle}"
+                    Margin="-5,-10" ExpandDirection="Up"
+                    ToolTip.Tip='Up side circle expander with theme "ExpanderCircle" applied'
+                    assist:ExpanderAssist.ExpanderHeight="50">
+            <Expander.Header>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </Expander.Header>
+            <ScrollViewer Height="104" Padding="0,0,10,0">
+              <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            </ScrollViewer>
+          </Expander>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+      </StackPanel>
+
+      <StackPanel Orientation="Vertical">
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="HExpander5" Margin="5" Padding="0">
+          <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
+                              ExpandDirection="Down"
+                              ToolTip.Tip='Down side stroke expander with theme "ExpanderStroke" applied'
+                              assist:ExpanderAssist.ExpanderHeight="42">
+            <Expander.Header>
+              <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </Expander.Header>
+            <ScrollViewer Height="104" Padding="0,0,10,0">
+              <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            </ScrollViewer>
+          </Expander>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="HExpander6" Margin="5" Padding="0">
+          <Expander Width="240" Theme="{StaticResource ExpanderStroke}"
+                    ExpandDirection="Up" CornerRadius="21"
+                    ToolTip.Tip='Up side stroke expander with theme "ExpanderStroke" applied'
+                    assist:ExpanderAssist.ExpanderHeight="42">
+            <Expander.Header>
+              <Border Margin="15,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </Expander.Header>
+            <ScrollViewer Height="104" Padding="0,0,10,0">
+              <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            </ScrollViewer>
+          </Expander>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+      </StackPanel>
+    </StackPanel>
+
+
+    <TextBlock Classes="Headline6 Subheadline2" Text="Horizontal expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
+    <StackPanel Orientation="Horizontal" MinHeight="220">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="VExpander1" Margin="0" Padding="0">
+        <Expander Height="210" ExpandDirection="Right" IsEnabled="False"
+                  ToolTip.Tip='Regular right side expander with default theme applied'
+                  assist:ExpanderAssist.ExpanderWidth="40">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <StackPanel.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                </TransformGroup>
+              </StackPanel.RenderTransform>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="VExpander2" Margin="0" Padding="0">
+        <Expander Height="210" ExpandDirection="Left"
+                  ToolTip.Tip='Regular left side expander with default theme applied'
+                  assist:ExpanderAssist.ExpanderWidth="40">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <StackPanel.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                </TransformGroup>
+              </StackPanel.RenderTransform>
+              <icons:MaterialIcon Grid.Column="0" Kind="UserAccessControl" Width="24" Height="24" Foreground="Gray"/>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="VExpander3" Margin="0" Padding="0">
+        <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Right" IsEnabled="False"
+                  ToolTip.Tip='Right side circle expander with theme "ExpanderCircle" applied'
+                  assist:ExpanderAssist.ExpanderWidth="38">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <StackPanel.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                </TransformGroup>
+              </StackPanel.RenderTransform>
+              <Border Margin="70,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="VExpander4" Margin="0" Padding="0">
+        <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Left"
+                  ToolTip.Tip='Left side circle expander with theme "ExpanderCircle" applied'
+                  assist:ExpanderAssist.ExpanderWidth="50">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <StackPanel.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                </TransformGroup>
+              </StackPanel.RenderTransform>
+              <Border Margin="70,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="VExpander5" Margin="0" Padding="0">
+        <Expander Height="210" Theme="{StaticResource ExpanderStroke}"
+                  ToolTip.Tip='Right side stroke expander with theme "ExpanderStroke" applied'
+                  ExpandDirection="Right"
+                  assist:ExpanderAssist.ExpanderWidth="38">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <StackPanel.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                </TransformGroup>
+              </StackPanel.RenderTransform>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="VExpander6" Margin="0" Padding="0">
+        <Expander Height="210" Theme="{StaticResource ExpanderStroke}" IsEnabled="False"
+                  ToolTip.Tip='Left side stroke expander with theme "ExpanderStroke" applied'
+                  ExpandDirection="Left"
+                  assist:ExpanderAssist.ExpanderWidth="38">
+          <Expander.Header>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+              <StackPanel.RenderTransform>
+                <TransformGroup>
+                  <RotateTransform Angle="90"/>
+                </TransformGroup>
+              </StackPanel.RenderTransform>
+              <Border Margin="10,0,0,0" VerticalAlignment="Stretch">
+                <TextBlock VerticalAlignment="Center" Text="Expand me"/>
+              </Border>
+            </StackPanel>
+          </Expander.Header>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+    </StackPanel>
+
+
+    <TextBlock Classes="Headline6 Subheadline2" Text="Customized expanders" Foreground="{DynamicResource MaterialDesignMediumGray}" Margin="0,20,0,10"/>
+    <StackPanel Orientation="Horizontal" Height="220">
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="CExpander1" Margin="0" Padding="0">
+        <Expander Height="210" Theme="{StaticResource ExpanderCircle}" ExpandDirection="Right"
+                  ToolTip.Tip='Customized circle expander with theme "ExpanderStroke" applied'
+                  assist:ExpanderAssist.ExpanderWidth="40">
+          <Expander.Header>
+            Open me
+          </Expander.Header>
+          <Expander.Styles>
+            <Style Selector="Expander:right /template/ ToggleButton#ExpanderHeader">
+              <Setter Property="Content" Value="Open me"/>
+              <Style Selector="^ /template/ Path#ExpandCollapseChevron">
+                <Setter Property="Fill" Value="{DynamicResource MaterialDesignMediumGray}"/>
+                <Setter Property="StrokeThickness" Value="0"/>
+                <Setter Property="Data" Value="M19 3L13 9L15 11L22 4V3M12 12.5A0.5 0.5 0 0 1 11.5 12A0.5 0.5 0 0 1 12 11.5A0.5 0.5 0 0 1 12.5 12A0.5 0.5 0 0 1 12 12.5M6 20A2 2 0 0 1 4 18C4 16.89 4.9 16 6 16A2 2 0 0 1 8 18C8 19.11 7.1 20 6 20M6 8A2 2 0 0 1 4 6C4 4.89 4.9 4 6 4A2 2 0 0 1 8 6C8 7.11 7.1 8 6 8M9.64 7.64C9.87 7.14 10 6.59 10 6A4 4 0 0 0 6 2A4 4 0 0 0 2 6A4 4 0 0 0 6 10C6.59 10 7.14 9.87 7.64 9.64L10 12L7.64 14.36C7.14 14.13 6.59 14 6 14A4 4 0 0 0 2 18A4 4 0 0 0 6 22A4 4 0 0 0 10 18C10 17.41 9.87 16.86 9.64 16.36L12 14L19 21H22V20L9.64 7.64Z"/>
+              </Style>
+            </Style>
+            <Style Selector="Expander:right:expanded /template/ ToggleButton#ExpanderHeader">
+              <Setter Property="Content" Value="Close me"/>
+              <Style Selector="^ /template/ Path#ExpandCollapseChevron">
+                <Setter Property="Fill" Value="{DynamicResource PrimaryHueLightBrush}"/>
+              </Style>
+            </Style>
+          </Expander.Styles>
+          <ScrollViewer Width="204" Padding="0,0,10,0">
+            <TextBlock TextWrapping="Wrap" Padding="10" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+          </ScrollViewer>
+        </Expander>
+      </showMeTheXaml:XamlDisplay>
+    </StackPanel>
+	</StackPanel>
+</UserControl>

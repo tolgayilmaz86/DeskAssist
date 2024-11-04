@@ -1,0 +1,394 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:models="clr-namespace:DeskAssist.Models"
+              xmlns:viewModels="clr-namespace:DeskAssist.ViewModels"
+              xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+              xmlns:assist="clr-namespace:Avalonia.Themes.Neumorphism.Assist;assembly=Avalonia.Themes.Neumorphism"
+              xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
+              xmlns:naming="clr-namespace:Avalonia.Themes.Neumorphism.Resources.Naming;assembly=Avalonia.Themes.Neumorphism"
+							xmlns:sys="using:System"
+              x:CompileBindings="True"
+              x:DataType="viewModels:MenusDemoViewModel"
+              x:Class="DeskAssist.Pages.MenusDemo">
+
+
+  <UserControl.Resources>
+	  <sys:Double x:Key="CustomBoxShadowRadius">128</sys:Double>
+  </UserControl.Resources>
+  
+
+  <StackPanel Margin="20" >
+		<TextBlock Classes="Headline4 Subheadline" Text="Menus" Foreground="{DynamicResource MaterialDesignDarkGray}" />
+
+
+
+		<StackPanel Orientation="Horizontal">
+			<!--****************************************************************-->
+			<showMeTheXaml:XamlDisplay UniqueId="Menu1" Width="380" Height="150">
+				<Menu Padding="0" Margin="0" HorizontalAlignment="Center"
+              ItemsSource="{CompiledBinding MenuItems}"
+              ToolTip.Tip='Menu with default theme applied'>
+
+          <Menu.Styles>
+            <Style Selector="MenuItem" x:DataType="models:CustomMenuItem">
+              <Setter Property="Header" Value="{CompiledBinding Title}"/>
+              <Setter Property="Icon">
+                <Setter.Value>
+                  <Template>
+                    <icons:MaterialIcon Kind="{Binding Icon.Kind}"
+                                        VerticalAlignment="Center"
+                                        IsEnabled="{CompiledBinding Enabled}"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{DynamicResource MaterialDesignForeground}"
+                                        Width="16"
+                                        Height="16">
+                        <icons:MaterialIcon.Styles>
+                          <Style Selector="icons|MaterialIcon:disabled">
+                            <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}"/>
+                          </Style>
+                        </icons:MaterialIcon.Styles>
+                      </icons:MaterialIcon>
+                  </Template>
+                </Setter.Value>
+                </Setter>
+              <Setter Property="ItemsSource" Value="{CompiledBinding Items}"/>
+              <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}"/>
+              <Setter Property="Command" Value="{CompiledBinding Command}"/>
+              <Setter Property="CommandParameter" Value="{CompiledBinding CommandParameter}"/>
+            </Style>
+          </Menu.Styles>
+				</Menu>
+			</showMeTheXaml:XamlDisplay>
+			<!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Menu2" Width="380" Height="150">
+        <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center"
+              ItemsSource="{CompiledBinding MenuItems}"
+              Theme="{StaticResource MenuCapsuleBarOutset}"
+              ToolTip.Tip='Menu with theme "MenuCapsuleBarOutset" applied'>
+
+          <Menu.Styles>
+            <Style Selector="MenuItem" x:DataType="models:CustomMenuItem">
+              <Setter Property="Header" Value="{CompiledBinding Title}"/>
+              <Setter Property="Icon">
+                <Setter.Value>
+                  <Template>
+                    <icons:MaterialIcon Kind="{Binding Icon.Kind}"
+                                        VerticalAlignment="Center"
+                                        IsEnabled="{CompiledBinding Enabled}"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{DynamicResource MaterialDesignForeground}"
+                                        Width="16"
+                                        Height="16">
+                      <icons:MaterialIcon.Styles>
+                        <Style Selector="icons|MaterialIcon:disabled">
+                          <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}"/>
+                        </Style>
+                      </icons:MaterialIcon.Styles>
+                    </icons:MaterialIcon>
+                  </Template>
+                </Setter.Value>
+              </Setter>
+              <Setter Property="ItemsSource" Value="{CompiledBinding Items}"/>
+              <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}"/>
+              <Setter Property="Command" Value="{CompiledBinding Command}"/>
+              <Setter Property="CommandParameter" Value="{CompiledBinding CommandParameter}"/>
+            </Style>
+          </Menu.Styles>
+        </Menu>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Menu3" Width="380" Height="150">
+        <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center"
+              ItemsSource="{CompiledBinding MenuItems}"
+              Theme="{StaticResource MenuCapsuleBarInset}"
+              ToolTip.Tip='Menu with theme "MenuCapsuleBarInset" applied'>
+
+          <Menu.Styles>
+            <Style Selector="MenuItem" x:DataType="models:CustomMenuItem">
+              <Setter Property="Header" Value="{CompiledBinding Title}"/>
+              <Setter Property="Icon">
+                <Setter.Value>
+                  <Template>
+                    <icons:MaterialIcon Kind="{Binding Icon.Kind}"
+                                        VerticalAlignment="Center"
+                                        IsEnabled="{CompiledBinding Enabled}"
+                                        HorizontalAlignment="Center"
+                                        Foreground="{DynamicResource MaterialDesignForeground}"
+                                        Width="16"
+                                        Height="16">
+                      <icons:MaterialIcon.Styles>
+                        <Style Selector="icons|MaterialIcon:disabled">
+                          <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}"/>
+                        </Style>
+                      </icons:MaterialIcon.Styles>
+                    </icons:MaterialIcon>
+                  </Template>
+                </Setter.Value>
+              </Setter>
+              <Setter Property="ItemsSource" Value="{CompiledBinding Items}"/>
+              <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}"/>
+              <Setter Property="Command" Value="{CompiledBinding Command}"/>
+              <Setter Property="CommandParameter" Value="{CompiledBinding CommandParameter}"/>
+            </Style>
+          </Menu.Styles>
+        </Menu>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+		</StackPanel>
+
+
+      <StackPanel Orientation="Horizontal">
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="Menu4" Width="380" Height="150">
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center"
+                ItemsSource="{CompiledBinding MenuItems}"
+                Theme="{StaticResource MenuCapsuleBarFlat}" CornerRadius="100"
+                ToolTip.Tip='Menu with theme "MenuCapsuleBarFlat" applied'>
+
+            <Menu.Styles>
+              <Style Selector="MenuItem" x:DataType="models:CustomMenuItem">
+                <Setter Property="Header" Value="{CompiledBinding Title}"/>
+                <Setter Property="Icon">
+                  <Setter.Value>
+                    <Template>
+                      <icons:MaterialIcon Kind="{Binding Icon.Kind}"
+                                          VerticalAlignment="Center"
+                                          IsEnabled="{CompiledBinding Enabled}"
+                                          HorizontalAlignment="Center"
+                                          Foreground="{DynamicResource MaterialDesignForeground}"
+                                          Width="20"
+                                          Height="20">
+                        <icons:MaterialIcon.Styles>
+                          <Style Selector="icons|MaterialIcon:disabled">
+                            <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}"/>
+                          </Style>
+                        </icons:MaterialIcon.Styles>
+                      </icons:MaterialIcon>
+                    </Template>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="ItemsSource" Value="{CompiledBinding Items}"/>
+                <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}"/>
+                <Setter Property="Command" Value="{CompiledBinding Command}"/>
+                <Setter Property="CommandParameter" Value="{CompiledBinding CommandParameter}"/>
+              </Style>
+            </Menu.Styles>
+          </Menu>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="Menu5" Width="380" Height="150">
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center"
+                ItemsSource="{CompiledBinding MenuItems}"
+                Theme="{StaticResource NoMaterialMenu}"
+                ToolTip.Tip='Menu with theme "NoMaterialMenu" applied'>
+
+            <Menu.Styles>
+              <Style Selector="MenuItem" x:DataType="models:CustomMenuItem">
+                <Setter Property="Header" Value="{CompiledBinding Title}"/>
+                <Setter Property="Icon">
+                  <Setter.Value>
+                    <Template>
+                      <icons:MaterialIcon Kind="{Binding Icon.Kind}"
+                                          VerticalAlignment="Center"
+                                          IsEnabled="{CompiledBinding Enabled}"
+                                          HorizontalAlignment="Center"
+                                          Foreground="{DynamicResource MaterialDesignForeground}"
+                                          Width="16"
+                                          Height="16">
+                        <icons:MaterialIcon.Styles>
+                          <Style Selector="icons|MaterialIcon:disabled">
+                            <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}"/>
+                          </Style>
+                        </icons:MaterialIcon.Styles>
+                      </icons:MaterialIcon>
+                    </Template>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="ItemsSource" Value="{CompiledBinding Items}"/>
+                <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}"/>
+                <Setter Property="Command" Value="{CompiledBinding Command}"/>
+                <Setter Property="CommandParameter" Value="{CompiledBinding CommandParameter}"/>
+              </Style>
+            </Menu.Styles>
+          </Menu>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+        <showMeTheXaml:XamlDisplay UniqueId="Menu6" Width="380" Height="150">
+          <Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center"
+                ItemsSource="{CompiledBinding MenuItems}"
+                Theme="{StaticResource NoMaterialMenuStroked}"
+                ToolTip.Tip='Menu with theme "NoMaterialMenuStroked" applied'>
+
+            <Menu.Styles>
+              <Style Selector="MenuItem" x:DataType="models:CustomMenuItem">
+                <Setter Property="Header" Value="{CompiledBinding Title}"/>
+                <Setter Property="Icon">
+                  <Setter.Value>
+                    <Template>
+                      <icons:MaterialIcon Kind="{Binding Icon.Kind}"
+                                          VerticalAlignment="Center"
+                                          IsEnabled="{CompiledBinding Enabled}"
+                                          HorizontalAlignment="Center"
+                                          Foreground="{DynamicResource MaterialDesignForeground}"
+                                          Width="20"
+                                          Height="20">
+                        <icons:MaterialIcon.Styles>
+                          <Style Selector="icons|MaterialIcon:disabled">
+                            <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}"/>
+                          </Style>
+                        </icons:MaterialIcon.Styles>
+                      </icons:MaterialIcon>
+                    </Template>
+                  </Setter.Value>
+                </Setter>
+                <Setter Property="ItemsSource" Value="{CompiledBinding Items}"/>
+                <Setter Property="IsEnabled" Value="{CompiledBinding Enabled}"/>
+                <Setter Property="Command" Value="{CompiledBinding Command}"/>
+                <Setter Property="CommandParameter" Value="{CompiledBinding CommandParameter}"/>
+              </Style>
+            </Menu.Styles>
+          </Menu>
+        </showMeTheXaml:XamlDisplay>
+        <!--****************************************************************-->
+      </StackPanel>
+
+		<StackPanel Orientation="Horizontal">
+			<!--****************************************************************-->
+			<showMeTheXaml:XamlDisplay UniqueId="Menu7" Width="380" Height="150">
+			  <Menu Padding="0" Margin="0" HorizontalAlignment="Center"
+              ToolTip.Tip='Fully custom image menu with default theme applied and custom template'>
+				  <MenuItem Height="68" Width="68"
+            FocusAdorner="{x:Null}"
+            assist:MenuAssist.PopupCornerRadius="10"
+					  assist:MenuAssist.PopupAnchor="TopRight"
+					  assist:MenuAssist.PopupHorizontalOffset="-140"
+					  assist:MenuAssist.PopupVerticalOffset="10">
+
+            <!--Fully redefined menu item template-->
+					  <MenuItem.Template>
+						  <ControlTemplate>
+							  <Panel Width="100" Height="100">
+                  <Border Name="PART_RootBorder" Width="68" Height="68" Margin="20" Cursor="Hand" BorderBrush="Transparent" BorderThickness="1" CornerRadius="100">
+                    <Border.BoxShadow>
+                      <MultiBinding Converter="{StaticResource AutoBoxShadowsConverter}" ConverterParameter="{x:Static naming:BoxShadowsStyle.Outset}">
+                        <DynamicResource ResourceKey="CustomBoxShadowRadius"/>
+                        <DynamicResource ResourceKey="MaterialDesignShadowLight" />
+                        <DynamicResource ResourceKey="MaterialDesignShadowDark" />
+                      </MultiBinding>
+                    </Border.BoxShadow>
+								  <Border Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" CornerRadius="100" BorderBrush="{DynamicResource MaterialDesignToolBackground}" BorderThickness="4" ClipToBounds="False">
+									  <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CornerRadius="100" ClipToBounds="True">
+										  <Image HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" ClipToBounds="True"
+													  Source="avares://DeskAssist/Assets/300.jpg" Stretch="Uniform" Width="64" Height="64" />
+									  </Border>
+								  </Border>
+                  </Border>
+								  <Popup Name="PART_Popup"
+						   WindowManagerAddShadowHint="False"
+						   Placement="RightEdgeAlignedTop"
+						   HorizontalOffset="-16"
+						   IsLightDismissEnabled="False"
+						   IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
+									  <Border Background="{DynamicResource MaterialDesignPaper}"
+											  BorderBrush="{DynamicResource MenuFlyoutSeparatorColor}"
+											  BorderThickness="1"
+											  Padding="0"
+											  MaxWidth="456"
+											  MinHeight="32"
+											  HorizontalAlignment="Stretch"
+											  CornerRadius="5">
+										  <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
+											  <ItemsPresenter Name="PART_ItemsPresenter"
+															  ItemsPanel="{TemplateBinding ItemsPanel}"
+															  Margin="0,4,0,4"
+															  Grid.IsSharedSizeScope="True" />
+										  </ScrollViewer>
+									  </Border>
+								  </Popup>
+							  </Panel>
+						  </ControlTemplate>
+					  </MenuItem.Template>
+
+            <MenuItem.Styles>
+                <Style Selector="MenuItem:focus /template/ Border#PART_RootBorder">
+                  <Setter Property="BorderBrush" Value="{DynamicResource MaterialDesignFocus}" />
+              </Style>
+            </MenuItem.Styles>
+
+				    <MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=22}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Follow us" Icon="{icons:MaterialIconExt Share, Size=22}">
+              <MenuItem Header="Twitter" Icon="{icons:MaterialIconExt Twitter, Size=22}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Instagram" Icon="{icons:MaterialIconExt Instagram, Size=22}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+              <MenuItem Header="Facebook" Icon="{icons:MaterialIconExt Facebook, Size=22}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            </MenuItem>
+				    <Separator />
+				    <MenuItem Header="About" Icon="{icons:MaterialIconExt AboutOutline, Size=22}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+				    <Separator />
+				    <MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitToApp, Size=22}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+				  </MenuItem>
+			  </Menu>
+        </showMeTheXaml:XamlDisplay>
+			<!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Menu8" Width="380" Height="150">
+				<Menu Height="32" Padding="0" Margin="0" HorizontalAlignment="Center"
+              ToolTip.Tip='Custom icon based menu with theme "NoMaterialMenu" applied'
+              Theme="{StaticResource NoMaterialMenu}">
+					<MenuItem Height="32" Width="32" CornerRadius="6" Header="{icons:MaterialIconExt Menu, Size=24}"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="BottomEdgeAlignedLeft"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="0">
+						<MenuItem Header="Hello !" Icon="{icons:MaterialIconExt Hand, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+						<Separator />
+						<MenuItem Header="About" Icon="{icons:MaterialIconExt AboutCircle, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+						<Separator />
+						<MenuItem Header="Goodbye" Icon="{icons:MaterialIconExt ExitRun, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+					</MenuItem>
+				</Menu>
+      </showMeTheXaml:XamlDisplay>
+			<!--****************************************************************-->
+      <showMeTheXaml:XamlDisplay UniqueId="Menu9" Width="380" Height="150">
+        <Menu Height="48" Padding="0" Margin="0" HorizontalAlignment="Center"
+              Theme="{StaticResource NoMaterialMenu}" VerticalAlignment="Center"
+              ToolTip.Tip='Custom icons based menu with theme "NoMaterialMenu" applied'>
+          <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt RocketLaunchOutline, Size=34}" Foreground="{DynamicResource MaterialDesignBodyLight}" Margin="10,0,10,0"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="Top"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="-10">
+            <MenuItem Header="Go to the moon !" Icon="{icons:MaterialIconExt SpaceInvaders, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Go to mars !" Icon="{icons:MaterialIconExt SpaceInvaders, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Go to Saturn !" Icon="{icons:MaterialIconExt SpaceInvaders, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+          </MenuItem>
+          <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt UserOutline, Size=34}" Foreground="{DynamicResource MaterialDesignBodyLight}" Margin="10,0,10,0"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="Top"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="-10">
+            <MenuItem Header="Create" Icon="{icons:MaterialIconExt CreateOutline, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Disable" Icon="{icons:MaterialIconExt StopCircleOutline, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Lock" Icon="{icons:MaterialIconExt LockOffOutline, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+          </MenuItem>
+          <MenuItem Height="48" Width="48" CornerRadius="6" Header="{icons:MaterialIconExt SecurityAccountOutline, Size=34}" Foreground="{DynamicResource MaterialDesignBodyLight}" Margin="10,0,10,0"
+											assist:MenuAssist.PopupAnchor="TopLeft"
+											assist:MenuAssist.PopupPlacement="Top"
+											assist:MenuAssist.PopupHorizontalOffset="0"
+											assist:MenuAssist.PopupVerticalOffset="-10">
+            <MenuItem Header="Allow" Icon="{icons:MaterialIconExt UserAddOutline, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Deny" Icon="{icons:MaterialIconExt UserRemoveOutline, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+            <Separator />
+            <MenuItem Header="Default" Icon="{icons:MaterialIconExt UserGroupOutline, Size=24}" Command="{Binding MenuItemClickCommand}" CommandParameter="{Binding $self.Header}"/>
+          </MenuItem>
+        </Menu>
+      </showMeTheXaml:XamlDisplay>
+      <!--****************************************************************-->
+      </StackPanel>
+    </StackPanel>
+</UserControl>
